@@ -2,6 +2,7 @@
     "image": "mcr.microsoft.com/devcontainers/python:3.13",
 
     "features": {
+        "ghcr.io/dhoeric/features/google-cloud-cli:1": "latest",
         "ghcr.io/jsburckhardt/devcontainer-features/uv:1": {},
         "ghcr.io/jsburckhardt/devcontainer-features/ruff:1": {},
     },
