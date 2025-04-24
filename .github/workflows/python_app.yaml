@@ -1,0 +1,28 @@
+name: Python app
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  run_ci:
+    name: Lint/Format/Test
+    runs-on: ubuntu-latest
+    steps:
+      - id: checkout
+        name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Linting
+        run: uvx ruff check
+
+      - name: Formatting
+        run: uvx ruff format --check
+
+      - name: Testing
+        run: uv run pytest tests
